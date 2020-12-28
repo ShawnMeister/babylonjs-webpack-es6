@@ -3,14 +3,14 @@ import { getSceneModuleWithName } from "./createScene";
 
 const getModuleToLoad = (): string | undefined => {
     // ATM using location.search
-    if(!location.search) {
+    if (!location.search) {
         return;
     } else {
         return location.search.substr(location.search.indexOf('scene=') + 6);
     }
 }
 
-export const babylonInit = async (): Promise<void>  => {
+export const babylonInit = async (): Promise<void> => {
     // get the module to load
     const moduleName = getModuleToLoad();
     const createSceneModule = await getSceneModuleWithName(moduleName);
@@ -18,9 +18,9 @@ export const babylonInit = async (): Promise<void>  => {
     // Execute the pretasks, if defined
     await Promise.all(createSceneModule.preTasks || []);
     // Get the canvas element
-    const canvas = document.getElementById("renderCanvas") as HTMLCanvasElement; 
+    const canvas = document.getElementById("renderCanvas") as HTMLCanvasElement;
     // Generate the BABYLON 3D engine
-    const engine = new Engine(canvas, true); 
+    const engine = new Engine(canvas, true);
 
     // Create the scene
     const scene = await createSceneModule.createScene(engine, canvas);
@@ -39,3 +39,5 @@ export const babylonInit = async (): Promise<void>  => {
 babylonInit().then(() => {
     // scene started rendering, everything is initialized
 });
+
+//bla
