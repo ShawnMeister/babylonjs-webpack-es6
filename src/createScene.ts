@@ -11,9 +11,9 @@ export interface CreateSceneModule {
 }
 
 export const getSceneModuleWithName = (
-    name = 'physicsWithAmmo'
+    name = "physicsWithAmmo"
 ): Promise<CreateSceneClass> => {
-    return import('./scenes/' + name).then((module: CreateSceneModule) => {
+    return import("./scenes/" + name).then((module: CreateSceneModule) => {
         return module.default;
     });
 
@@ -23,4 +23,3 @@ export const getSceneModuleWithName = (
     //     return module.default;
     // });
 };
-

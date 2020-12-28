@@ -13,10 +13,9 @@ import { CreateSceneClass } from "../createScene";
 import { Texture } from "@babylonjs/core/Materials/Textures/texture";
 
 import grassTextureUrl from "../../assets/grass.jpg";
-import { Color3, CubeTexture, MeshBuilder } from '@babylonjs/core';
+import { Color3, CubeTexture, MeshBuilder } from "@babylonjs/core";
 
 export class DefaultSceneWithTexture implements CreateSceneClass {
-
     createScene = async (
         engine: Engine,
         canvas: HTMLCanvasElement
@@ -41,7 +40,11 @@ export class DefaultSceneWithTexture implements CreateSceneClass {
         camera.attachControl(canvas, true);
 
         // This creates a light, aiming 0,1,0 - to the sky (non-mesh)
-        const light = new HemisphericLight("light", new Vector3(0, 1, 0), scene);
+        const light = new HemisphericLight(
+            "light",
+            new Vector3(0, 1, 0),
+            scene
+        );
 
         // Default intensity is 1. Let's dim the light a small amount
         light.intensity = 0.7;
@@ -68,8 +71,6 @@ export class DefaultSceneWithTexture implements CreateSceneClass {
         groundMaterial.diffuseTexture = new Texture(grassTextureUrl, scene);
 
         ground.material = groundMaterial;
-
-
 
         return scene;
     };

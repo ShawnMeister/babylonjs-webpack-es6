@@ -6,9 +6,9 @@ const getModuleToLoad = (): string | undefined => {
     if (!location.search) {
         return;
     } else {
-        return location.search.substr(location.search.indexOf('scene=') + 6);
+        return location.search.substr(location.search.indexOf("scene=") + 6);
     }
-}
+};
 
 export const babylonInit = async (): Promise<void> => {
     // get the module to load
@@ -34,7 +34,7 @@ export const babylonInit = async (): Promise<void> => {
     window.addEventListener("resize", function () {
         engine.resize();
     });
-}
+};
 
 babylonInit().then(() => {
     // scene started rendering, everything is initialized
