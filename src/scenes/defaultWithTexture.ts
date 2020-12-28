@@ -58,7 +58,7 @@ export class DefaultSceneWithTexture implements CreateSceneClass {
         // Our built-in 'ground' shape.
         const ground = GroundBuilder.CreateGround(
             "ground",
-            { width: 6, height: 6 },
+            { width: 60, height: 60 },
             scene
         );
     

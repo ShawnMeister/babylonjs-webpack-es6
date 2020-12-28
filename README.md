@@ -56,3 +56,9 @@ The rest? You should know already, this is why you are here.
 - Full debugging with any browser AND VS Code
 - (production) bundle builder.
 - eslint default typescript rules integrated
+
+# Minimum Viable Product
+
+1st - Two Spheres
+2nd - Be able to hit one sphere into another, and have the spheres bounce off of one another. Using WASD or Normal Keys
+3rd - If a ball falls offf of the platform alert says "BALL DEATH"
